@@ -18,6 +18,14 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 */
 
 /* Compléter la suite du code */
+.carousel__navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
 .carousel__container {
   display: flex;
   gap: 16px;
