@@ -18,7 +18,7 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 */
 
 /* Compléter la suite du code */
-.carousel__navigation ul {
+.carousel__navigation {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -26,12 +26,17 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   padding: 0;
 }
 
+.carousel__viewport {
+  position: relative;
+  margin: 16px -24px;
+}
+
 .carousel__container {
   display: flex;
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
-  margin: 16px -24px;
+  margin: 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -43,7 +48,16 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   /* Définit le type de défilement pour accrocher les éléments - https://developer.mozilla.org/fr/docs/Web/CSS/scroll-snap-type */
 }
 
+.carousel__controls {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .carousel__button {
+  position: absolute;
+  top: 50%;
   width: 50px;
   height: 50px;
   display: flex;
@@ -51,6 +65,9 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   justify-content: center;
   border: 1px solid #ccc;
   border-radius: 50%;
+  background-color: #fff;
+  transform: translateY(-50%);
+  pointer-events: auto;
   /* Largeur du bouton 50px - https://developer.mozilla.org/fr/docs/Web/CSS/width */
   /* Hauteur du bouton 50px - https://developer.mozilla.org/fr/docs/Web/CSS/height */
   /* Utilise flexbox pour aligner le contenu du bouton - https://developer.mozilla.org/fr/docs/Web/CSS/display */
@@ -61,8 +78,13 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 }
 
 .carousel__button--prev {
-  transform: rotate(180deg);
+  left: 8px;
+  transform: translateY(-50%) rotate(180deg);
   /* Fait pivoter le bouton de 180 degrés - https://developer.mozilla.org/fr/docs/Web/CSS/transform */
+}
+
+.carousel__button--next {
+  right: 8px;
 }
 
 .carousel__item {
