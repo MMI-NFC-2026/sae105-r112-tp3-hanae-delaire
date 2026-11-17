@@ -20,3 +20,7 @@ if (carousel) {
     carousel.scrollLeft += 260;
   });
 }
+premierItem = document.querySelector(".carousel__item");
+260;
+
+
